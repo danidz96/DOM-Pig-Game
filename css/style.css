@@ -8,11 +8,6 @@
     box-sizing: border-box;
 }
 
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
-}
 
 body {
     background-image: linear-gradient(rgba(62, 20, 58, 0.4), rgba(62, 20, 58, 0.4)), url('../assets/back.jpg');
@@ -84,7 +79,7 @@ body {
 }
 
 .active {
-    background-color: #f7f7f7;
+    background-color: #f3f3f3;
 }
 
 .active .player-name {
@@ -156,8 +151,8 @@ i {
 }
 
 .dice {
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
     margin: 0 auto;
 }
