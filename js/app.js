@@ -30,7 +30,7 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
 
         //Mostrar el dado
         var diceSelector = document.querySelector('.dice');
-        diceSelector.style.display = 'block';
+        diceSelector.style.visibility = 'visible';
         diceSelector.src = ('assets/dice-' + dice + '.png');
 
         //Añadir puntuación al jugador
@@ -51,7 +51,7 @@ function init() {
     roundScore = 0;
     gameActive = true;
 
-    /* document.querySelector('.dice').style.visibility = 'hidden'; */
+    document.querySelector('.dice').style.visibility = 'hidden';
 
     score_0.textContent = '0';
     score_1.textContent = '0';
