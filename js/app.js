@@ -42,8 +42,25 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
             document.getElementById("current-" + activePlayer).textContent = roundScore;
         }
     }
+
     
 });
+
+function nextPlayer() {
+
+    //Comprobar jugador actual y cambiar al siguiente
+    activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+
+    //Igualar a 0 el resultado de la ronda
+    roundScore = 0;
+
+    //Cambiar los estilos
+    current_0.textContent = '0';
+    current_1.textContent = '0';
+    player_1_panel.classList.toggle('active');
+    player_2_panel.classList.toggle('active');
+
+}
 
 function init() {
     scores = [0, 0];
