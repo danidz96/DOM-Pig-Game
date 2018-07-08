@@ -38,12 +38,33 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
             roundScore += dice;
             document.getElementById('current-' + activePlayer).textContent = roundScore;
         } else {
-            roundScore = 0;
-            document.getElementById("current-" + activePlayer).textContent = roundScore;
+            nextPlayer();
         }
     }
 
     
+});
+
+document.querySelector('.btn-hold').addEventListener('click', function () {
+    if (gameActive) {
+        //Añadir el resultado de la ronda al contador global
+        scores[activePlayer] += roundScore;
+
+        //Actualizar el contador en pantalla
+        document.getElementById("score-" + activePlayer).textContent = scores[activePlayer];
+
+        //Comprobar si el jugador ha ganado
+        if (scores[activePlayer] >= 100) {
+            document.querySelector('#name-' + activePlayer).textContent = 'Ganador!';
+            document.querySelector('.dice').style.visibility = 'hidden';
+            document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+            document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+            gamePlaying = false;
+        } else {
+            nextPlayer();
+        }
+    }
+
 });
 
 function nextPlayer() {
