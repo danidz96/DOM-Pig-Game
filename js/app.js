@@ -106,3 +106,12 @@ function init() {
 
 document.querySelector('.btn-new').addEventListener('click', init);
 
+//Mostrar reglas
+document.querySelector('.btn-rules').addEventListener('click', function () {
+    document.querySelector('.rules').style.visibility = 'visible';
+});
+
+//Cerrar reglas
+document.querySelector('.btn-close').addEventListener('click', function () {
+    document.querySelector('.rules').style.visibility = 'hidden';
+});

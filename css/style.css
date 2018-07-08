@@ -8,7 +8,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     background-image: linear-gradient(rgba(62, 20, 58, 0.4), rgba(62, 20, 58, 0.4)), url('../assets/back.jpg');
     background-size: cover;
@@ -170,4 +169,46 @@ i {
 .winner .player-name {
     font-weight: 300;
     color: #EB4D4D;
+}
+
+.btn-rules {
+    width: auto;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.rules {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 30px;
+    height: 600px;
+    width: 1000px;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    visibility: hidden;
+}
+
+.rules i {
+    color: white;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+
+.rules ul {
+    list-style: none;
+    font-size: 1.2em;
+    margin-top: 30px;
+    line-height: 1.7;
+}
+
+.rules ul li::before {
+    content: '- ';
+}
+
+.btn-close:hover {
+    cursor: pointer;
 }
