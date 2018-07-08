@@ -30,6 +30,7 @@ body {
     display: flex;
     align-self: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .player-0-panel, .player-1-panel, .extras {
@@ -54,7 +55,8 @@ body {
 
 .extras {
     padding: 30px 0;
-    background: rgb(255, 238, 238);
+    position: absolute;
+    left: 400px;
 }
 
 /**********************************************
@@ -79,7 +81,7 @@ body {
 }
 
 .active {
-    background-color: #f3f3f3;
+    background-color: #f7f7f7;
 }
 
 .active .player-name {

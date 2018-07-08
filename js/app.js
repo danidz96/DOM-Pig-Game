@@ -8,7 +8,7 @@ REGLAS DEL JUEGO:
 - El primer jugador en alcanzar los 100 puntos en el global gana el juego.
 */
 
-var scores, roundScore, activePlayer, dice, gameActive;
+var scores, roundScore, activePlayer, gameActive;
 
 //DOM variables
 var score_0 = document.getElementById('score-0');
@@ -23,13 +23,35 @@ var player_2_panel = document.querySelector('.player-1-panel');
 init();
 
 
+document.querySelector('.btn-roll').addEventListener('click', function () {
+    if (gameActive) {
+        //Tirar dado
+        var dice = Math.floor(Math.random() * 6) + 1;
+
+        //Mostrar el dado
+        var diceSelector = document.querySelector('.dice');
+        diceSelector.style.display = 'block';
+        diceSelector.src = ('assets/dice-' + dice + '.png');
+
+        //Añadir puntuación al jugador
+        if(dice != 1) {
+            roundScore += dice;
+            document.getElementById('current-' + activePlayer).textContent = roundScore;
+        } else {
+            roundScore = 0;
+            document.getElementById("current-" + activePlayer).textContent = roundScore;
+        }
+    }
+    
+});
+
 function init() {
     scores = [0, 0];
     activePlayer = 0;
     roundScore = 0;
     gameActive = true;
 
-    document.querySelector('.dice').style.visibility = 'hidden';
+    /* document.querySelector('.dice').style.visibility = 'hidden'; */
 
     score_0.textContent = '0';
     score_1.textContent = '0';
